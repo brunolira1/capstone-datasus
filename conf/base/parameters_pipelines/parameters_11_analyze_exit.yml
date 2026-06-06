@@ -1,0 +1,5 @@
+plot_percentual_altas_tempo_output_path: data/08_reporting/saidas/percentual_altas_tempo.png
+
+plot_percentual_permanencias_tempo_output_path: data/08_reporting/saidas/percentual_permanencias_tempo.png
+
+plot_razao_altas_permanencias_output_path: data/08_reporting/saidas/razao_altas_permanencias.png

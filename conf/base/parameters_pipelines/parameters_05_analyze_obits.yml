@@ -1,0 +1,22 @@
+obits_per_age_barplot_output_path: data/08_reporting/obits_barplots/obits_per_age_barplot.png
+
+obits_per_complexity_barplot_output_path: data/08_reporting/obits_barplots/obits_per_complexity_barplot.png
+
+obits_rate_per_age_barplot_output_path: data/08_reporting/obits_barplots/obits_rate_per_age_barplot.png
+
+stratified:
+  col_idade: "PA_IDADE"
+  col_obito: "PA_OBITO"
+  strat_cols:
+    - 'PA_TPFIN'
+    - 'PA_TPUPS'
+  min_samples: 5000
+  obit_rate_stratified_output_dir: data/08_reporting/obits_barplots/stratified_obit_rates
+  obit_rate_monthly_stratified:
+    col_mes: "PA_MVM"
+    col_obito: "PA_OBITO"
+    strat_cols:
+      - 'PA_TPUPS'
+    min_samples: 5000
+    output_dir: data/08_reporting/obits_barplots/stratified_obit_rates_monthly
+

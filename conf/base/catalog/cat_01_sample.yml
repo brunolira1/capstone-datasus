@@ -1,0 +1,192 @@
+#arquivos dbf sampled
+sampled_pasp1601a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1601a.csv
+
+sampled_pasp1602a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1602a.csv
+
+sampled_pasp1603a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1603a.csv
+
+sampled_pasp1604a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1604a.csv
+
+sampled_pasp1605a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1605a.csv
+
+sampled_pasp1606a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1606a.csv
+
+sampled_pasp1607a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1607a.csv
+
+sampled_pasp1608a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1608a.csv
+
+sampled_pasp1609a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1609a.csv
+
+sampled_pasp1610a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1610a.csv
+
+sampled_pasp1611a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1611a.csv
+
+sampled_pasp1612a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1612a.csv
+
+sampled_pasp1701a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1701a.csv
+
+sampled_pasp1702a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1702a.csv
+
+sampled_pasp1703a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1703a.csv
+
+sampled_pasp1704a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1704a.csv
+
+sampled_pasp1705a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1705a.csv
+
+sampled_pasp1706a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1706a.csv
+
+sampled_pasp1707a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1707a.csv
+
+sampled_pasp1708a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1708a.csv
+
+sampled_pasp1709a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1709a.csv
+
+sampled_pasp1710a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1710a.csv
+
+sampled_pasp1711a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1711a.csv
+
+sampled_pasp1712a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1712a.csv
+
+sampled_pasp1801a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1801a.csv
+
+sampled_pasp1802a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1802a.csv
+
+sampled_pasp1803a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1803a.csv
+
+sampled_pasp1804a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1804a.csv
+
+sampled_pasp1805a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1805a.csv
+
+sampled_pasp1806a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1806a.csv
+
+sampled_pasp1807a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1807a.csv
+
+sampled_pasp1808a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1808a.csv
+
+sampled_pasp1809a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1809a.csv
+
+sampled_pasp1810a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1810a.csv
+
+sampled_pasp1811a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1811a.csv
+
+sampled_pasp1812a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1812a.csv
+
+sampled_pasp1901a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1901a.csv
+
+sampled_pasp1902a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1902a.csv
+
+sampled_pasp1903a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1903a.csv
+
+sampled_pasp1904a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1904a.csv
+
+sampled_pasp1905a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1905a.csv
+
+sampled_pasp1906a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1906a.csv
+
+sampled_pasp1907a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1907a.csv
+
+sampled_pasp1908a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1908a.csv
+
+sampled_pasp1909a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1909a.csv
+
+sampled_pasp1910a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1910a.csv
+
+sampled_pasp1911a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1911a.csv
+
+sampled_pasp1912a:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/PASP1912a.csv

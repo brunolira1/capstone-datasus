@@ -1,0 +1,13 @@
+obits_rate_per_mndif_output_path: data/08_reporting/obits_barplots/obito_vs_mndif/obits_rate_per_mndif.png
+
+complexity_by_mndif_output_path: data/08_reporting/obits_barplots/complexity_by_mndif/complexity_by_mndif.png
+
+percentual_mndif_por_tpups_output_path: data/08_reporting/obits_barplots/percentual_mndif_por_tpups/percentual_mndif_por_tpups.png
+
+top_municipios_mndif_origem_output_path: data/08_reporting/municipios/top_municipios_mndif_origem.png
+
+top_municipios_mndif_destino_output_path: data/08_reporting/municipios/top_municipios_mndif_destino.png
+
+top_municipios_obits_output_path: data/08_reporting/municipios/top_municipios_obits.png
+
+valor_aprovado_por_municipio_output_path: data/08_reporting/municipios/valor_aprovado_por_municipio.png

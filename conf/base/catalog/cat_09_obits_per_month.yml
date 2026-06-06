@@ -1,0 +1,3 @@
+comparison_obits_vs_glosa:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/obits_barplots/obito_vs_glosa/obito_vs_glosa_clinica.csv

@@ -1,0 +1,5 @@
+obits_rate_per_month_output_path: data/08_reporting/obits_barplots/obits_rate_per_month_barplot.png
+
+obit_vs_glosa_output_dir: data/08_reporting/obits_barplots/obito_vs_glosa/obito_vs_glosa_clinica.png
+
+obit_vs_glosa_col_estab: "36" #clínica/centro de especialidade

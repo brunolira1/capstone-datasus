@@ -1,0 +1,15 @@
+pasp_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/pasp_model.pkl
+
+pasp_test_df: 
+  type: pandas.ParquetDataset
+  filepath: data/07_model_output/pasp_test_df.parquet
+
+pasp_df_feat_imp:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/pasp_df_feat_imp.csv
+
+pasp_dict_performance: 
+  type: json.JSONDataset
+  filepath: data/07_model_output/pasp_dict_performance.json

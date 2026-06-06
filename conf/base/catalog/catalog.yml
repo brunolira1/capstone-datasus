@@ -1,0 +1,585 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+#
+# We support interacting with a variety of data stores including local file systems, cloud, network and HDFS
+#
+# An example data set definition can look as follows:
+#
+#bikes:
+#  type: pandas.CSVDataset
+#  filepath: "data/01_raw/bikes.csv"
+#
+#weather:
+#  type: spark.SparkDataset
+#  filepath: s3a://your_bucket/data/01_raw/weather*
+#  file_format: csv
+#  credentials: dev_s3
+#  #load_args:
+#    
+#    inferSchema: True
+#  save_args:
+#    sep: '|'
+#    
+#
+#scooters:
+#  type: pandas.SQLTableDataset
+#  credentials: scooters_credentials
+#  table_name: scooters
+#  #load_args:
+#    index_col: ['name']
+#    columns: ['name', 'gear']
+#  save_args:
+#    if_exists: 'replace'
+#    # if_exists: 'fail'
+#    # if_exists: 'append'
+#
+# The Data Catalog supports being able to reference the same file using two different Dataset implementations
+# (transcoding), templating and a way to reuse arguments that are frequently repeated. See more here:
+# https://docs.kedro.org/en/stable/data/data_catalog.html
+
+#arquivos dbf
+
+PASP_df:
+  type: pandas.ParquetDataset
+  filepath: data/04_feature/PASP_df.parquet
+
+PASP_df_model_raw:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/PASP_df_model_raw.parquet
+
+PASP_df_model_transformed:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/PASP_df_model_transformed.parquet
+  
+pasp1601a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1601a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1602a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1602a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1603a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1603a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1604a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1604a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+    
+
+pasp1605a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1605a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1606a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1606a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1607a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1607a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1608a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1608a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1609a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1609a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1610a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1610a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1611a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1611a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1612a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1612a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1701a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1701a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1702a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1702a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1703a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1703a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1704a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1704a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1705a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1705a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+    
+
+pasp1706a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1706a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1707a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1707a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1708a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1708a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+    
+
+pasp1709a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1709a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+    
+
+pasp1710a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1710a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1711a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1711a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1712a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1712a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1801a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1801a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1802a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1802a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1803a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1803a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1804a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1804a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1805a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1805a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1806a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1806a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1807a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1807a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1808a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1808a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1809a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1809a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1810a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1810a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1811a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1811a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+    
+pasp1812a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1812a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1901a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1901a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1902a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1902a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1903a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1903a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1904a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1904a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1905a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1905a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1906a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1906a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1907a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1907a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1908a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1908a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1909a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1909a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+pasp1910a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1910a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1911a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1911a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip    
+
+pasp1912a:
+  type: capstone_datasus.module.read_dbf.DBFDataset
+  filepath: data/01_raw/PASP1912a.dbf
+  #load_args:
+    #encoding: latin-1
+    #sep: ","
+    #engine: python
+    #on_bad_lines: skip
+
+#example of catalogs
+companies:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/companies.csv
+
+reviews:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/reviews.csv
+
+shuttles:
+  type: pandas.ExcelDataset
+  filepath: data/01_raw/shuttles.xlsx
+
+preprocessed_companies:
+  filepath: data/02_intermediate/preprocessed_companies.csv
+  type: spark.SparkDatasetV2
+  file_format: csv
+  load_args:
+    
+    inferSchema: True
+  save_args:
+    sep: ','
+    
+    mode: overwrite
+
+preprocessed_shuttles:
+  filepath: data/02_intermediate/preprocessed_shuttles.csv
+  type: spark.SparkDatasetV2
+  file_format: csv
+  load_args:
+    
+    inferSchema: True
+  save_args:
+    sep: ','
+    
+    mode: overwrite
+
+preprocessed_reviews:
+  filepath: data/02_intermediate/preprocessed_reviews.csv
+  type: spark.SparkDatasetV2
+  file_format: csv
+  load_args:
+    
+    inferSchema: True
+  save_args:
+    sep: ','
+    
+    mode: overwrite
+
+model_input_table@spark:
+  filepath: data/03_primary/model_input_table.parquet
+  type: spark.SparkDatasetV2
+  file_format: parquet
+  load_args:
+    
+    inferSchema: True
+  save_args:
+    sep: ','
+    
+    mode: overwrite
+
+model_input_table@pandas:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/model_input_table.parquet
+
+regressor:
+  type: pickle.PickleDataset
+  filepath: data/06_models/regressor.pickle
+  versioned: true
+
+shuttle_passenger_capacity_plot_exp:
+  type: plotly.PlotlyDataset
+  filepath: data/08_reporting/shuttle_passenger_capacity_plot_exp.json
+  versioned: true
+  plotly_args:
+    type: bar
+    fig:
+      x: shuttle_type
+      y: passenger_capacity
+      orientation: h
+    layout:
+      xaxis_title: Shuttles
+      yaxis_title: Average passenger capacity
+      title: Shuttle Passenger capacity
+
+shuttle_passenger_capacity_plot_go:
+  type: plotly.JSONDataset
+  filepath: data/08_reporting/shuttle_passenger_capacity_plot_go.json
+  versioned: true
+
+dummy_confusion_matrix:
+  type: matplotlib.MatplotlibDataset
+  filepath: data/08_reporting/dummy_confusion_matrix.png
+  versioned: true

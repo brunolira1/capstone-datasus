@@ -1,0 +1,105 @@
+output_filepath: data/04_feature/PASP_df.parquet
+
+output_filepath_model_raw: data/05_model_input/PASP_df_model_raw.parquet
+
+output_filepath_model_transformed: data/05_model_input/PASP_df_model_transformed.parquet
+
+filepaths_anomes:
+  - data/03_primary/PASP1601a.csv
+  - data/03_primary/PASP1602a.csv
+  - data/03_primary/PASP1603a.csv
+  - data/03_primary/PASP1604a.csv
+  - data/03_primary/PASP1605a.csv
+  - data/03_primary/PASP1606a.csv
+  - data/03_primary/PASP1607a.csv
+  - data/03_primary/PASP1608a.csv
+  - data/03_primary/PASP1609a.csv
+  - data/03_primary/PASP1610a.csv
+  - data/03_primary/PASP1611a.csv
+  - data/03_primary/PASP1612a.csv
+  - data/03_primary/PASP1701a.csv
+  - data/03_primary/PASP1702a.csv
+  - data/03_primary/PASP1703a.csv
+  - data/03_primary/PASP1704a.csv
+  - data/03_primary/PASP1705a.csv
+  - data/03_primary/PASP1706a.csv
+  - data/03_primary/PASP1707a.csv
+  - data/03_primary/PASP1708a.csv
+  - data/03_primary/PASP1709a.csv
+  - data/03_primary/PASP1710a.csv
+  - data/03_primary/PASP1711a.csv
+  - data/03_primary/PASP1712a.csv
+  - data/03_primary/PASP1801a.csv
+  - data/03_primary/PASP1802a.csv
+  - data/03_primary/PASP1803a.csv
+  - data/03_primary/PASP1804a.csv
+  - data/03_primary/PASP1805a.csv
+  - data/03_primary/PASP1806a.csv
+  - data/03_primary/PASP1807a.csv
+  - data/03_primary/PASP1808a.csv
+  - data/03_primary/PASP1809a.csv
+  - data/03_primary/PASP1810a.csv
+  - data/03_primary/PASP1811a.csv
+  - data/03_primary/PASP1812a.csv
+  - data/03_primary/PASP1901a.csv
+  - data/03_primary/PASP1902a.csv
+  - data/03_primary/PASP1903a.csv
+  - data/03_primary/PASP1904a.csv
+  - data/03_primary/PASP1905a.csv
+  - data/03_primary/PASP1906a.csv
+  - data/03_primary/PASP1907a.csv
+  - data/03_primary/PASP1908a.csv
+  - data/03_primary/PASP1909a.csv
+  - data/03_primary/PASP1910a.csv
+  - data/03_primary/PASP1911a.csv
+  - data/03_primary/PASP1912a.csv
+
+Columns_to_concat:
+  - 'PA_REGCT'
+  - 'PA_TPUPS'
+  - 'PA_UFMUN'
+  - 'PA_TPFIN'
+  - 'PA_SUBFIN'
+  - 'PA_NIVCPL'
+  - 'PA_DOCORIG'
+  - 'PA_CBOCOD'
+  - 'PA_MOTSAI'
+  - 'PA_OBITO'
+  - 'PA_ALTA'
+  - 'PA_TRANSF'
+  - 'PA_FLIDADE'
+  - 'PA_IDADE'
+  - 'PA_SEXO'
+  - 'PA_MUNPCN'
+  - 'PA_QTDPRO'
+  - 'PA_VALPRO'
+  - 'PA_VALAPR'
+  - 'PA_MNDIF'
+  - 'PA_INDICA'
+  - 'PA_MVM'
+
+Columns_model:
+  - 'PA_OBITO' # target
+  - 'PA_MVM' #divisão treino/teste
+  - 'PA_REGCT'
+  - 'PA_INCOUT'
+  - 'PA_INCURG'
+  - 'PA_MN_IND'
+  - 'PA_TPUPS'
+  - 'PA_UFMUN'
+  - 'PA_TPFIN'
+  - 'PA_SUBFIN'
+  - 'PA_NIVCPL'
+  - 'PA_DOCORIG'
+  - 'PA_CBOCOD'
+  - 'PA_CIDPRI'
+  - 'PA_CIDSEC'
+  - 'PA_CIDCAS'
+  - 'PA_IDADE'
+  - 'PA_SEXO'
+  - 'PA_MUNPCN'
+  - 'PA_QTDPRO'
+  - 'PA_VALPRO'
+  - 'PA_VALAPR'
+  - 'PA_MNDIF'
+  - 'PA_INDICA'

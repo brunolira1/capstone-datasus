@@ -1,0 +1,4 @@
+
+rate_glosa_per_month_output_path: data/08_reporting/glosa_per_month/glosa_rate_per_month.png
+
+impacto_pico_glosa_per_tpups_csv_path: data/08_reporting/glosa_per_month/impacto_pico_glosa_per_tpups.csv

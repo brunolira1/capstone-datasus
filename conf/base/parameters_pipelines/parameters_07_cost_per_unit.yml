@@ -1,0 +1,5 @@
+cost_per_unit_tpups_output_path: data/08_reporting/cost_per_unit/cost_per_unit_tpups.png
+
+obits_per_unit_tpups_output_path: data/08_reporting/obits_barplots/obits_per_unit_tpups.png
+
+glosa_per_unit_tpups_output_path: data/08_reporting/glosa_per_unit/glosa_per_unit_tpups.png

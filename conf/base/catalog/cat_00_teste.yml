@@ -1,0 +1,14 @@
+df_dbf:
+  #type: capstone_datasus.module.read_dbf.DBFDataset
+  type: pandas.CSVDataset
+  filepath: data/01_raw/PASP0802.dbf
+
+dbf_head100:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/dbf_head100.csv
+
+
+#ler arquivo dbf usando o caminho definido em parameters.yml
+#pasp_dbf:
+#  type: capstone_datasus.module.read_dbf.DBFDataset
+#  filepath: data/01_raw/PASP1601a.dbf

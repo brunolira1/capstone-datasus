@@ -1,0 +1,25 @@
+model_params:
+  objective: "binary"
+  metric: "auc"
+  boosting_type: "gbdt"
+  num_leaves: 64
+  max_depth: 8
+  min_data_in_leaf: 500
+  lambda_l1: 1.0
+  lambda_l2: 1.0
+  learning_rate: 0.05
+  n_estimators: 1000
+  feature_fraction: 0.8
+  bagging_fraction: 0.8
+  bagging_freq: 1
+  scale_pos_weight: 40
+  n_jobs: -1
+  verbose: -1
+
+confusion_matrix_output_path: data/08_reporting/model_evaluation/confusion_matrix.png
+
+roc_output_path: data/08_reporting/model_evaluation/roc_curve.png
+
+precision_recall_output_path: data/08_reporting/model_evaluation/precision_recall_curve.png
+
+feature_importance_output_path: data/08_reporting/model_evaluation/feature_importance.png

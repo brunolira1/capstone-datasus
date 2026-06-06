@@ -1,0 +1,3 @@
+mean_median_per_age_output_path: data/08_reporting/mean_median_per_age/mean_median_budget_per_age.png
+
+boxplot_per_age_output_path: data/08_reporting/mean_median_per_age/boxplot/boxplot_budget_per_age.png
