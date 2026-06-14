@@ -6,6 +6,9 @@ def transform_df_model(df: pd.DataFrame) -> pd.DataFrame:
     
     # tirando os dados do tipo Consolidado, pois não são dados individuais
     df = df[df["PA_DOCORIG"] != 'C']
+    
+    # retirando dados do CID Z525 por conta de alta probabilidade de vazamento de informação de óbitos
+    df = df[df["PA_CIDPRI"] != "Z525"]
 
     # Converter colunas para tipos adequados
     df["PA_IDADE"] = pd.to_numeric(df["PA_IDADE"], errors="coerce")

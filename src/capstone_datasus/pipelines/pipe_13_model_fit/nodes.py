@@ -17,6 +17,7 @@ def model_fit(
     target_col: str = "PA_OBITO",
     train_flag_col: str = "is_train",
 ):
+
     """
     Treina um LightGBM e gera probabilidades para o conjunto de teste.
     """
@@ -100,7 +101,6 @@ def plot_model_metrics(
     y_pred_proba : array-like
         Probabilidade prevista da classe positiva.
     """
-
 
     y_test = y_true[y_true["is_train"] == 0 ]
 
@@ -245,3 +245,15 @@ def plot_feature_importance_percent(
         plt.savefig(output_path, dpi=300, bbox_inches="tight")
 
     plt.show()
+
+
+def predicted_examples(df: pd.DataFrame, n: int = 50) -> pd.DataFrame:
+    """
+    Retorna os n exemplos com maior e menor probabilidade prevista de óbito.
+    """
+
+    top = df.sort_values("pred_proba", ascending=False).head(n)
+
+    bottom = df.sort_values("pred_proba", ascending=True).head(n)
+
+    return top, bottom

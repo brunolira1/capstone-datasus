@@ -13,3 +13,12 @@ pasp_df_feat_imp:
 pasp_dict_performance: 
   type: json.JSONDataset
   filepath: data/07_model_output/pasp_dict_performance.json
+
+
+predicted_top_examples:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/pasp_predicted_top_examples.csv
+
+predicted_bottom_examples:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/pasp_predicted_bottom_examples.csv

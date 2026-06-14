@@ -1,5 +1,5 @@
 from kedro.pipeline import Node, Pipeline
-from .nodes import model_fit, plot_feature_importance_percent, plot_model_metrics
+from .nodes import model_fit, plot_feature_importance_percent, plot_model_metrics, predicted_examples
 
 nodes = []
 def create_pipeline(**kwargs) -> Pipeline:
@@ -23,6 +23,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                     ],
             outputs=None,
             name="plot_model_metrics_node",
+            tags = ["evaluation"]
         )
     )
 
@@ -32,6 +33,16 @@ def create_pipeline(**kwargs) -> Pipeline:
             inputs=["pasp_df_feat_imp", "params:feature_importance_output_path"],
             outputs=None,
             name="plot_feature_importance_node",
+            tags = ["evaluation"]
+        )
+    )
+
+    nodes.append(
+        Node(
+            func=predicted_examples,
+            inputs=["pasp_test_df"],
+            outputs=["predicted_top_examples", "predicted_bottom_examples"],
+            name="predicted_examples_node",
         )
     )
 
