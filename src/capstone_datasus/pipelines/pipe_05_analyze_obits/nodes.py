@@ -237,14 +237,15 @@ def plot_obit_rate_stratified(
     estratificados por colunas categóricas.
 
     Parâmetros:
-    - strat_cols: lista de colunas para estratificação (ex: ["PA_TPUPS", "PA_TPFIN"])
+    - strat_cols: lista de colunas para estratificação
+      (ex: ["PA_TPUPS", "PA_TPFIN"])
     - min_samples: mínimo de registros por grupo para gerar gráfico
     """
 
     logger = logging.getLogger(__name__)
 
     # Removendo registros do tipo Consolidado pois não são dados individuais
-    df = df[df["PA_DOCORIG"] != 'C']
+    df = df[df["PA_DOCORIG"] != "C"]
 
     if strat_cols is None:
         strat_cols = []
@@ -252,15 +253,15 @@ def plot_obit_rate_stratified(
     # Mantém apenas colunas necessárias
     cols_needed = [col_idade, col_obito] + strat_cols
     df = df[cols_needed].copy()
-    
+
     # Tipos
     df[col_idade] = pd.to_numeric(df[col_idade], errors="coerce")
     df[col_obito] = pd.to_numeric(df[col_obito], errors="coerce")
 
     # Filtro idade
     df = df[(df[col_idade] >= 1) & (df[col_idade] <= 100)]
-    #breakpoint()
-    # Bucket
+
+    # Bucketização
     df["idade_bucket"] = ((df[col_idade] - 1) // 10).astype(int)
 
     # Cria diretório base
@@ -275,7 +276,11 @@ def plot_obit_rate_stratified(
     for group_key, group_df in groups:
         # Nome do grupo
         if isinstance(group_key, tuple):
-            group_name = replace_tuple(group_key, REPLACE_DICT_TPFIN, REPLACE_DICT_TPUPS)
+            group_name = replace_tuple(
+                group_key,
+                REPLACE_DICT_TPFIN,
+                REPLACE_DICT_TPUPS,
+            )
         else:
             group_name = str(group_key)
 
@@ -287,7 +292,11 @@ def plot_obit_rate_stratified(
         total = group_df.groupby("idade_bucket").size()
 
         # Óbitos por bucket
-        obitos = group_df[group_df[col_obito] == 1].groupby("idade_bucket").size()
+        obitos = (
+            group_df[group_df[col_obito] == 1]
+            .groupby("idade_bucket")
+            .size()
+        )
 
         # Percentual
         percentual = (obitos / total).fillna(0) * 100
@@ -295,10 +304,16 @@ def plot_obit_rate_stratified(
 
         # Plot
         plt.figure(figsize=(10, 6))
-        percentual.plot(kind="bar")
+        ax = percentual.plot(kind="bar")
+
+        labels = [
+            "1-10" if i == 0 else f"{i*10+1}-{(i+1)*10}"
+            for i in percentual.index
+        ]
+        ax.set_xticklabels(labels, rotation=0)
 
         plt.title(f"% de óbitos por idade | {group_name}")
-        plt.xlabel("Faixa de idade (0=1-10, 1=11-20, ...)")
+        plt.xlabel("Faixa de idade")
         plt.ylabel("% de óbitos")
 
         plt.tight_layout()
@@ -312,6 +327,3 @@ def plot_obit_rate_stratified(
         logger.info("Salvo: %s | n=%d", file_path, len(group_df))
 
     return None
-
-
-
