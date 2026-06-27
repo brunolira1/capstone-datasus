@@ -1,0 +1,7 @@
+df_municipios:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/municipios_localizacao.csv
+
+df_fluxo:
+  type: pandas.CSVDataset
+  filepath: data/04_feature/PASP_df_fluxo.csv
