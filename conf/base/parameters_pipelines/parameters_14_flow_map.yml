@@ -1,0 +1,3 @@
+patient_flow_output_path: data/08_reporting/flow_map/patient_flow_map.png
+
+sp_mapa_path: data/04_feature/geodataset/SP_Municipios_2025.shp
