@@ -11,6 +11,7 @@ def analyze_mndif_vs_death(
     col_mndif: str = "PA_MNDIF",
     col_obito: str = "PA_OBITO"
 ) -> pd.DataFrame:
+    breakpoint()
     """
     Analisa se pacientes de outro município (PA_MNDIF) têm maior taxa de óbito.
 

@@ -11,27 +11,26 @@ def obits_per_age_barplot(
     col_idade: str = "PA_IDADE",
     col_obito: str = "PA_OBITO",
 ) -> None:
-
     """
     Gera um gráfico de barras com a quantidade de óbitos (PA_OBITO == 1)
     por faixa de idade (bucketizada) e salva no caminho especificado.
 
     Regras:
-    - Ignora idades < 1 ou == 100
+    - Ignora idades < 1
     - Bucketização:
         1-10   -> 0
         11-20  -> 1
         21-30  -> 2
         ...
+        91-100 -> 9
     """
 
     logger = logging.getLogger(__name__)
 
     # Removendo registros do tipo Consolidado pois não são dados individuais
-    df = df[df["PA_DOCORIG"] != 'C']
+    df = df[df["PA_DOCORIG"] != "C"]
 
-
-    # Mantém apenas as colunas necessárias (caso venham mais)
+    # Mantém apenas as colunas necessárias
     df = df[[col_idade, col_obito]].copy()
 
     # Garante tipo numérico
@@ -41,7 +40,7 @@ def obits_per_age_barplot(
     # Remove valores inválidos
     df = df[(df[col_idade] >= 1) & (df[col_idade] <= 100)]
 
-    # Bucketização de idade
+    # Bucketização
     df["idade_bucket"] = ((df[col_idade] - 1) // 10).astype(int)
 
     # Filtra apenas óbitos
@@ -58,10 +57,16 @@ def obits_per_age_barplot(
 
     # Plot
     plt.figure(figsize=(10, 6))
-    counts.plot(kind="bar")
+    ax = counts.plot(kind="bar")
+
+    labels = [
+        "1-10" if i == 0 else f"{i*10+1}-{(i+1)*10}"
+        for i in counts.index
+    ]
+    ax.set_xticklabels(labels, rotation=0)
 
     plt.title("Óbitos por faixa de idade")
-    plt.xlabel("Faixa de idade (0=1-10, 1=11-20, ...)")
+    plt.xlabel("Faixa de idade")
     plt.ylabel("Quantidade de óbitos")
 
     plt.tight_layout()
@@ -82,22 +87,23 @@ def obits_rate_per_age_barplot(
     col_obito: str = "PA_OBITO",
 ) -> None:
     """
-    Gera um gráfico de barras com o percentual de óbitos (PA_OBITO == 1)
+    Gera um gráfico de barras com o percentual de óbitos
     por faixa de idade e salva no caminho especificado.
 
     Regras:
-    - Ignora idades < 1 ou == 100
+    - Ignora idades < 1
     - Bucketização:
         1-10   -> 0
         11-20  -> 1
         21-30  -> 2
         ...
+        91-100 -> 9
     """
 
     logger = logging.getLogger(__name__)
 
     # Removendo registros do tipo Consolidado pois não são dados individuais
-    df = df[df["PA_DOCORIG"] != 'C']
+    df = df[df["PA_DOCORIG"] != "C"]
 
     # Mantém apenas colunas necessárias
     df = df[[col_idade, col_obito]].copy()
@@ -118,17 +124,24 @@ def obits_rate_per_age_barplot(
     # Total de óbitos por bucket
     obitos = df[df[col_obito] == 1].groupby("idade_bucket").size()
 
-    # Calcula percentual (alinhando índices)
+    # Calcula percentual
     percentual = (obitos / total).fillna(0) * 100
+    percentual = percentual.sort_index()
 
     logger.info("Percentual de óbitos por faixa:\n%s", percentual)
 
     # Plot
     plt.figure(figsize=(10, 6))
-    percentual.sort_index().plot(kind="bar")
+    ax = percentual.plot(kind="bar")
+
+    labels = [
+        "1-10" if i == 0 else f"{i*10+1}-{(i+1)*10}"
+        for i in percentual.index
+    ]
+    ax.set_xticklabels(labels, rotation=0)
 
     plt.title("Percentual de óbitos por faixa de idade")
-    plt.xlabel("Faixa de idade (0=1-10, 1=11-20, ...)")
+    plt.xlabel("Faixa de idade")
     plt.ylabel("% de óbitos")
 
     plt.tight_layout()
