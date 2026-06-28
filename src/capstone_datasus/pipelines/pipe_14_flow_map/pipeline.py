@@ -11,7 +11,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                 df="PASP_df",
                 df_coords="df_municipios",
             ),
-            outputs="df_fluxo",
+            outputs=["df_fluxo_parquet", "df_fluxo_csv"],
             name="create_city_flow_table",
         )
     )
@@ -20,7 +20,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         Node(
             func=plot_patient_flow,
             inputs=dict(
-                df_fluxo="df_fluxo",
+                df_fluxo="df_fluxo_parquet",
                 shp_path="params:sp_mapa_path",
                 output_path="params:patient_flow_output_path",
             ),

@@ -137,7 +137,7 @@ def create_city_flow_table(
 
     df_fluxo = df_fluxo.rename(columns={"PA_MUNPCN": "municipio_origem", "PA_UFMUN": "municipio_destino"})
 
-    return df_fluxo
+    return df_fluxo, df_fluxo
 
 
 def plot_patient_flow(

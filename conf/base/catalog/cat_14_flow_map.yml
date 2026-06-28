@@ -2,9 +2,13 @@ df_municipios:
   type: pandas.CSVDataset
   filepath: data/02_intermediate/municipios_localizacao.csv
 
-df_fluxo:
+df_fluxo_parquet:
   type: pandas.ParquetDataset
   filepath: data/04_feature/PASP_df_fluxo.parquet
+
+df_fluxo_csv:
+  type: pandas.CSVDataset
+  filepath: data/04_feature/PASP_df_fluxo.csv
 
 #sp_mapa:
 #  type: kedro_datasets.geopandas.GeoDataset
